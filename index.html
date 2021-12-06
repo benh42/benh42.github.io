@@ -1,140 +1,248 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>Fate Interactive Editor</title>
-    <link rel="stylesheet" type="text/css" href="style_fie_ben.css">
+    <title>Bebsite</title>
+    <link rel="stylesheet" type="text/css" href="bss_personal_website.css">
 </head>
 <body>
     <div id="title" class="top container">
-        <h1>Fate Interactive Editor</h1>
-        <p>created by Ben Hartley</p>
+        <h1>Bebsite</h1>
+        Some things that I've done... <br>
     </div>
-    <div id="dieRoller" class="mid container">
-        <h1>FATE Dice</h1>
-        <p>created by Matteo Colucci</p>
-        <iframe src="https://matita.github.io/fatedice/" title="FATE dice" style="width:100%;height:400px;" frameborder="1"></iframe>
+    <div id="bio" class="mid container">
+        <b>Bio</b> 
+        <hr>
+        <p>
+            My name is Ben Hartley, Harvey Mudd class of 2025 student. <br><br> I like hiking, robotics, games, reading, chess, and of course my dogs (:
+        </p>
     </div>
-    <div id="id" class="mid container">
-        <h1>ID</h1>
-        <table>
+        <div id="projects" class="mid container">
+        <b>Projects</b>
+        <hr>
+        <div class="scroll_box">
+            <table id="projects_table" class="clickable" style="width:100%">
+                <tr id="colorSchemeGeneratorBtn" onclick="document.getElementById('colorSchemeGeneratorModal').style.display='block';">
+                    <td style="width:33%"><a href="colorSchemeGenerator/color_scheme_gen.html">Color Scheme Generator</a></td>
+                    <td style="width:66%">A simple app to generate color schemes of various types.</td>
+                </tr>
+                <tr id="fateInteractiveEditorBtn" onclick="document.getElementById('fateInteractiveEditorModal').style.display='block';">
+                    <td style="width:33%"><a href="fateInteractiveEditor/fate_interactive_editor.html">Fate Interactive Editor</a></td>
+                    <td style="width:66%">A simple app for filling out and saving <a href="https://fate-srd.com/fate-core">FATE</a> character sheets.</td>
+                </tr>
+                <tr id="mazeBtn" onclick="document.getElementById('mazeModal').style.display='block';">
+                    <td style="width:33%">Maze Generation</td>
+                    <td style="width:66%">For some reason I love making programs to generate mazes. My most recent endeavors have been towards creating a GAN that will build the 'hardest' maze!</td>
+                </tr>
+                <tr id="controlTheoryBtn" onclick="document.getElementById('controlTheoryModal').style.display='block';">
+                    <td style="width:33%">Control Theory Class</td>
+                    <td style="width:66%">Over the past 2 years I have tried to make Control Theory for robotics accesible to young highschool students with very basic math and programming background; This is a catalogue of my progress and material.</td>
+                </tr>
+                <tr id="algorithmsBtn" onclick="document.getElementById('algorithmsModal').style.display='block';">
+                    <td style="width:33%">Algorithms Class</td>
+                    <td style="width:66%">The intent of this project is to show students the breadth of topics that an Algorithmic approach opens to exploration. Algorithms should be intuitive and accesible, this class tries to make that the case.</td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+    </div>
+    <div id="info" class="mid container">
+        <b>Info</b>
+        <hr>
+        <table id="info_table">
             <tr>
-                <td><b>Name:</b><input type="text" id="name" name="name" style="width:100%"></td>
+                <td>Email</td>
+                <td>benwhartley@icloud.com</td>
             </tr>
             <tr>
-                <td><b>Description:</b><textarea id="description" name="description" style="width:100%;height:80px"></textarea></td>
+                <td>Phone</td>
+                <td>(661) 645-6961</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>The Moon</td>
+            </tr>
+            <tr>
+                <td>SSN</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Favorite Fruit</td>
+                <td>Apple</td>
             </tr>
         </table>
+        <hr>
+        <div id="social_media" style="margin-left: 190px;">
+            <a href="https://www.linkedin.com/in/benjamin-hartley-86056a19a/" target="_blank"><img src="linked_in.png" style="width:40px"></a>
+            <a href="https://www.instagram.com/ben_hartley_42/" target="_blank"><img src="instagram.jpg" style="width:40px"></a>
+            <span class="tooltip">
+                <span class="tooltiptext">BH42#7897</span><img src="discord.png" style="width:40px">
+            </span>
+        </div>
     </div>
-    <div id="aspects" class="mid container">
-        <h1>Aspects</h1>
-        <table>
-            <tr>
-                <td><b>High Concept:</b><input type="text" id="high-concept" name="high-concept" style="width:100%"></td>
-            </tr>
-            <tr>
-                <td><b>Trouble:</b><input type="text" id="trouble" name="trouble" style="width:100%"></td>
-            </tr>
-            <tr>
-                <td><b>1:</b><input type="text" id="aspect1" name="aspect1" style="width:100%"></td>
-            </tr>
-            <tr>
-                <td><b>2:</b><input type="text" id="aspect2" name="aspect2" style="width:100%"></td>
-            </tr>
-            <tr>
-                <td><b>3:</b><input type="text" id="aspect3" name="aspect3" style="width:100%"></td>
-            </tr>
-        </table>
-    </div>
-    <div id="skills" class="mid container">
-        <h1>Skills</h1>
-        <table>
-            <tr>
-                <th style="width:25px"><b>+5</b></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-            </tr>
-            <tr>
-                <th style="width:25px"><b>+4</b></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-            </tr>
-            <tr>
-                <th style="width:25px"><b>+3</b></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-            </tr>
-            <tr>
-                <th style="width:25px"><b>+2</b></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-            </tr>
-            <tr>
-                <th style="width:25px"><b>+1</b></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-                <td style="width:50px;padding-right:10px"><input type="text" id="name" name="name" style="width:100%"></td>
-            </tr>
-        </table>
-    </div>
-    <div id="extras" class="mid container">
-        <h1>Extras</h1>
-        <table>
-            <tr>
-                <td><b>Extras:</b><textarea id="extras" name="extras" style="width:100%;height:80px"></textarea></td>
-            </tr>
-        </table>
-    </div>
-    <div id="stunts" class="mid container">
-        <h1>Stunts</h1>
-        <table>
-            <tr>
-                <td><b>Stunts:</b><textarea id="stunts" name="stunts" style="width:100%;height:80px"></textarea></td>
-            </tr>
-        </table>
-    </div>
-    <div id="stress" class="mid container">
-        <h1>Stress</h1>
-        <table>
-            <tr>
-                <th style="width:50px">Physical Stress</th>
-                <td style="width:50px"><input type="checkbox">1</td>
-                <td style="width:50px"><input type="checkbox">2</td>
-                <td style="width:50px"><input type="checkbox">3</td>
-                <td style="width:50px"><input type="checkbox">4</td>
-            </tr>
-            <tr>
-                <th style="width:50px">Mental Stress</th>
-                <td style="width:50px"><input type="checkbox">1</td>
-                <td style="width:50px"><input type="checkbox">2</td>
-                <td style="width:50px"><input type="checkbox">3</td>
-                <td style="width:50px"><input type="checkbox">4</td>
-            </tr>
-        </table>
-    </div>
-    <div id="consequences" class="mid container">
-        <h1>Consequences</h1>
-        <table>
-            <tr>
-                <td style="width:50px"><input type="checkbox">minor</td>
-                <td style="width:50px"><input type="checkbox">minor backup</td>
-            </tr>
-            <tr>
-                <td style="width:50px"><input type="checkbox">mild</td>
-                <td style="width:50px"><input type="checkbox">severe</td>
-            </tr>
-        </table>
-    </div>
+
+    <section id="modals">
+        <div id="mazeModal" class="modal">
+            <div class="container">
+                <b>Maze Generation</b>
+                <hr>
+                <p>For some reason I love making programs to generate mazes.<br><br>The mazes below were generated either completely randomly or useing an image as a template to trace edges. I am particularly proud of the dalek!<br><br>My most recent endeavors have been towards creating a GAN that will build the 'hardest' maze!</p>
+                <div name="maze" class="slide_holder">
+                    <div class="prev">
+                        <a onclick="plusSlides('maze',-1)">
+                            &#10094;
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <img src="maze/maze1.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="maze/maze2.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="maze/maze3.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="maze/maze4.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="maze/maze5.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="maze/maze6.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="maze/maze7.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="next">
+                        <a onclick="plusSlides('maze',1)">
+                            &#10095;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="controlTheoryModal" class="modal">
+            <div class="container">
+                <b>Control Theory Class</b>
+                <hr>
+                <p>Over the past 2 years I have tried to make Control Theory for robotics accesible to young highschool students with very basic math and programming background; This is a catalogue of my progress and material.</p>
+                <div name="controlTheory" class="slide_holder">
+                    <div class="prev">
+                        <a onclick="plusSlides('controlTheory',-1)">
+                            &#10094;
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRf5bL-4w8Zg0MD35jPLkD7dqy6I49EirVYsKj75_Jx72EHP5ttcU8z-eK72CmKBkk3ws6chKf93W9K/embed?start=false&loop=false&delayms=5000" frameborder="0" width="100%" height=250px allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
+                    <div class="slide">
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS0tDTM6mREcGnWQfrPsdajfQwhjOu_026NAGqASGlBUPZ5KWZ8bKgEZFqIrRimOJyvCPY4AehEy9Ul/embed?start=false&loop=false&delayms=5000" frameborder="0" width="100%" height="250" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
+                    <div class="next">
+                        <a onclick="plusSlides('controlTheory',1)">
+                            &#10095;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="algorithmsModal" class="modal">
+            <div class="container">
+                <b>Algorithms Class</b>
+                <hr>
+                <p>The intent of this project is to show students the breadth of topics that an Algorithmic approach opens to exploration. Algorithms should be intuitive and accesible, this class tries to make that the case.<br><br>The images after the slideshows are examples of final projects that some of my students have produced. The first 4 belong to Jack. The next 2 belong to Ella. The Last 2 belong to Nishant.</p>
+                <div name="algorithms" class="slide_holder">
+                    <div class="prev">
+                        <a onclick="plusSlides('algorithms',-1)">
+                            &#10094;
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTXNAPaftXULLBszGcUeIWsW6MnvuGsFyI5U5HKtfcSAxMzeL0e6NLzAwfo4Rc_N0kBUb3gvM9HrYyZ/embed?start=false&loop=false&delayms=5000" frameborder="0" width="100%" height="250" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
+                    <div class="slide">
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRiVUlGzALx7CWz-4cxOGEulxDCOTGUPw4lh3Afnha0rtuZrxsMAv7bsJdS2-9pIh2_o6tsd6IJa06F/embed?start=false&loop=false&delayms=5000" frameborder="0" width="100%" height="250" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
+                    <div class="slide">
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTvK9bds06q3AMFWEeYajz0kSN8BSAyLXLiLPZ8icFpHRkr4RolV_TNi9-8nJei5-iP59jmjG4eptrO/embed?start=false&loop=false&delayms=5000" frameborder="0" width="100%" height="250" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
+                    <div class="slide">
+                        <img src="algorithms/jack_flowchart.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="algorithms/jack_demo1.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="algorithms/jack_demo2.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="algorithms/jack_demo3.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="algorithms/ella_flowchart.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="algorithms/ella_demo.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="algorithms/nishant_demo1.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="slide">
+                        <img src="algorithms/nishant_demo2.png" style="width: 100%;border: 3px solid black;">
+                    </div>
+                    <div class="next">
+                        <a onclick="plusSlides('algorithms',1)">
+                            &#10095;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var modals = document.getElementsByClassName("modal");
+
+        window.onclick = function(event) {
+            if (event.target.className == "modal") {
+                event.target.style.display = "none";
+            }
+        }
+        var slideshows = [
+            "maze",
+            "controlTheory",
+            "algorithms",
+        ]
+        var slide_indices = {
+            "maze":1,
+            "controlTheory":1,
+            "algorithms":1,
+        };
+
+        for (i=0; i < slideshows.length; i++) {
+            showSlides(slideshows[i],1);
+        }
+
+        function plusSlides(slideshow_name,n) {
+            showSlides(slideshow_name,slide_indices[slideshow_name] += n)
+        }
+        function currentSlide(slideshow_name,n) {
+            showSlides(slideshow_name,slide_indices[slideshow_name] = n)
+        }
+        function showSlides(slideshow_name,n) {
+            var i;
+            var slideshow = document.getElementsByName(slideshow_name)
+            var slides = slideshow[0].getElementsByClassName("slide");
+            if (n > slides.length) {
+                slide_indices[slideshow_name] = 1;
+            }
+            if (n <  1) {
+                slide_indices[slideshow_name] = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"
+            }
+            slides[slide_indices[slideshow_name]-1].style.display = "block";
+        }
+    </script>
 </body>
+</html>
