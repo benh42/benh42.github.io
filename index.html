@@ -6,7 +6,7 @@
 </head>
 <body>
     <div id="title" class="top container">
-        <h1>Bebsite</h1>
+        <h1>Ben's Site</h1>
         Some things that I've done... <br>
     </div>
     <div id="bio" class="mid container">
@@ -15,7 +15,7 @@
         <p>
             My name is Ben Hartley. I am currently a Harvey Mudd class of 2025 student.
             <br><br>
-            I enjoy hiking, altruism, reading, crafts, games, and <i>of course</i> my dogs (:
+            I enjoy hiking, reading, crafts, games, and my dogs (:
         </p>
     </div>
     <div id="projects" class="mid container">
@@ -23,6 +23,10 @@
         <hr>
         <div class="scroll_box">
             <table id="projects_table" class="clickable" style="width:100%">
+                <tr id="juliaFractalsBtn" onclick="document.getElementById('juliaFractalsModal').style.display='block';">
+                    <td style="width:33%">Julia Fractals Lesson</td>
+                    <td style="width:66%">I created this lesson plan for an application to be an instructor at a summer tech camp.</td>
+                </tr>
                 <tr id="colorSchemeGeneratorBtn" onclick="document.getElementById('colorSchemeGeneratorModal').style.display='block';">
                     <td style="width:33%"><a href="https://benh42.github.io/color-scheme-generator/">Color Scheme Generator</a></td>
                     <td style="width:66%">A simple app to generate color schemes of various types.</td>
@@ -33,7 +37,7 @@
                 </tr>
                 <tr id="mazeBtn" onclick="document.getElementById('mazeModal').style.display='block';">
                     <td style="width:33%">Maze Generation</td>
-                    <td style="width:66%">I found a peculiar interest in making programs to generate mazes. My most recent endeavors have been towards creating a GAN that will build the 'hardest' maze!</td>
+                    <td style="width:66%">I found a peculiar interest in making programs to generate mazes.</td>
                 </tr>
                 <tr id="controlTheoryBtn" onclick="document.getElementById('controlTheoryModal').style.display='block';">
                     <td style="width:33%">Control Theory Class</td>
@@ -55,6 +59,10 @@
                 <td><a href="https://www.authentichappiness.sas.upenn.edu/questionnaires/perma">PERMA Profiler</a></td>
                 <td>A survey for measuring personal wellbeing in a variety of categories.</td>
             </tr>
+            <tr>
+                <td><a href="https://obsidian.md/">Obsidian</a></td>
+                <td>A tool that I use almost constantly for organizing my life and my thoughts.</td>
+            </tr>
         </table>
     </div>
     <div id="info" class="mid container">
@@ -67,7 +75,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td>bhartley@hmc.edu</td>
+                <td>bhartley@g.hmc.edu</td>
             </tr>
             <tr>
                 <td>Pronouns</td>
@@ -208,6 +216,28 @@
                 </div>
             </div>
         </div>
+        <div id="juliaFractalsModal" class="modal">
+            <div class="container">
+                <b>Julia Fractals Lesson</b>
+                <hr>
+                <p>I created this lesson plan for an application to be an instructor at a summer tech camp.<br><br>
+                <div name="juliaFractals" class="slide_holder">
+                    <div class="prev">
+                        <a onclick="plusSlides('juliaFractals',-1)">
+                            &#10094;
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTAcGHYDR2zZCOfEd75mE1RIvJhOYuGfwn6cPbg8zxwnIVbH9cvc6fFHU4qWot4Vuk1ls4g6px0GRpM/embed?start=false&loop=false&delayms=5000" frameborder="0" width="100%" height="250" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                    </div>
+                    <div class="next">
+                        <a onclick="plusSlides('juliaFractals',1)">
+                            &#10095;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <script>
         var modals = document.getElementsByClassName("modal");
@@ -221,11 +251,13 @@
             "maze",
             "controlTheory",
             "algorithms",
+            "juliaFractals"
         ]
         var slide_indices = {
             "maze":1,
             "controlTheory":1,
             "algorithms":1,
+            "juliaFractals":1
         };
 
         for (i=0; i < slideshows.length; i++) {
