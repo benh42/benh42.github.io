@@ -23,6 +23,14 @@
         <hr>
         <div class="scroll_box">
             <table id="projects_table" class="clickable" style="width:100%">
+                <tr id="estimationSyllabusBtn" onclick="document.getElementById('estimationSyllabusModal').style.display='block';">
+                    <td style="width:33%">Estimation Course Syllabus</td>
+                    <td style="width:66%">I am in the process of writing this syllabus for a 7 week course that aims to specifically teach fluency in estimation and orders of magnitude.</td>
+                </tr>
+                <tr id="relativitySyllabusBtn" onclick="document.getElementById('relativitySyllabusModal').style.display='block';">
+                    <td style="width:33%">Relativity Course Syllabus</td>
+                    <td style="width:66%">I created this syllabus for a 7 week course that teaches special relativity while also using it to motivate more philosophical discussions about our place in the universe.</td>
+                </tr>
                 <tr id="juliaFractalsBtn" onclick="document.getElementById('juliaFractalsModal').style.display='block';">
                     <td style="width:33%">Julia Fractals Lesson</td>
                     <td style="width:66%">I created this lesson plan for an application to be an instructor at a summer tech camp.</td>
@@ -93,7 +101,7 @@
                 <span class="tooltiptext">BH42#7897</span><img src="discord.png" style="width:40px">
             </span>
             <span class="tooltip">
-                <span class="tooltiptext">Resume as of 11/1/2022</span><a href="Resume_11.1.2022.pdf" target="_blank"><img src="resume_v2.jpg" style="width:40px"></a>
+                <span class="tooltiptext">Resume as of 11/1/2022</span><a href="Resume.pdf" target="_blank"><img src="resume_v2.jpg" style="width:40px"></a>
             </span>
         </div>
     </div>
@@ -238,6 +246,50 @@
                 </div>
             </div>
         </div>
+        <div id="estimationSyllabusModal" class="modal">
+            <div class="container">
+                <b>Estimation Course Syllabus</b>
+                <hr>
+                <p>I am in the process of writing this syllabus for a 7 week course that aims to specifically teach fluency in estimation and orders of magnitude.<br><br>
+                <div name="estimationSyllabus" class="slide_holder">
+                    <div class="prev">
+                        <a onclick="plusSlides('estimationSyllabus',-1)">
+                            &#10094;
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <iframe src="estimation/estimation_syllabus.pdf" style="width: 100%;border: 3px solid black;"></iframe>
+                    </div>
+                    <div class="next">
+                        <a onclick="plusSlides('estimationSyllabus',1)">
+                            &#10095;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="relativitySyllabusModal" class="modal">
+            <div class="container">
+                <b>Relativity Course Syllabus</b>
+                <hr>
+                <p>I created this syllabus for a 7 week course that teaches special relativity while also using it to motivate more philosophical discussions about our place in the universe.<br><br>
+                <div name="relativitySyllabus" class="slide_holder">
+                    <div class="prev">
+                        <a onclick="plusSlides('relativitySyllabus',-1)">
+                            &#10094;
+                        </a>
+                    </div>
+                    <div class="slide">
+                        <iframe src="relativity/relativity_syllabus.pdf" style="width: 100%;border: 3px solid black;"></iframe>
+                    </div>
+                    <div class="next">
+                        <a onclick="plusSlides('relativitySyllabus',1)">
+                            &#10095;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <script>
         var modals = document.getElementsByClassName("modal");
@@ -251,13 +303,17 @@
             "maze",
             "controlTheory",
             "algorithms",
-            "juliaFractals"
+            "juliaFractals",
+            "relativitySyllabus",
+            "estimationSyllabus"
         ]
         var slide_indices = {
             "maze":1,
             "controlTheory":1,
             "algorithms":1,
-            "juliaFractals":1
+            "juliaFractals":1,
+            "relativitySyllabus":1,
+            "estimationSyllabus":1
         };
 
         for (i=0; i < slideshows.length; i++) {
